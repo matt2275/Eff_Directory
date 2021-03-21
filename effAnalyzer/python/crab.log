@@ -1,0 +1,183 @@
+DEBUG 2020-08-27 08:06:04.530 UTC: 	 Running on: Linux lxplus707.cern.ch 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-08-27 08:06:04.595 UTC: 	 OpenSSl version: OpenSSL 1.0.1r  28 Jan 2016
+DEBUG 2020-08-27 08:06:04.596 UTC: 	 Executing command: 'status'
+DEBUG 2020-08-27 08:06:04.597 UTC: 	 Found CRAB cache file /afs/cern.ch/user/m/mumuhamm/.crab3
+ERROR 2020-08-27 08:06:04.709 UTC: 	 Error: /afs/cern.ch/work/m/mumuhamm/private/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_Continum_CERNBOX/crab_TrkTrig_Efficiency is not a valid CRAB project directory.
+ERROR 2020-08-27 08:06:04.709 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 595, in validateOptions
+    raise ConfigurationException(msg)
+ConfigurationException: [91mError[0m: /afs/cern.ch/work/m/mumuhamm/private/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_Continum_CERNBOX/crab_TrkTrig_Efficiency is not a valid CRAB project directory.
+DEBUG 2020-08-27 18:14:50.538 UTC: 	 Running on: Linux lxplus7119.cern.ch 3.10.0-1127.18.2.el7.x86_64 #1 SMP Sun Jul 26 15:27:06 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-08-27 18:14:50.554 UTC: 	 OpenSSl version: OpenSSL 1.0.1r  28 Jan 2016
+DEBUG 2020-08-27 18:14:50.555 UTC: 	 Executing command: 'submit'
+DEBUG 2020-08-27 18:14:50.555 UTC: 	 Found CRAB cache file /afs/cern.ch/user/m/mumuhamm/.crab3
+DEBUG 2020-08-27 18:14:50.561 UTC: 	 Checking credentials
+DEBUG 2020-08-27 18:14:50.562 UTC: 	 Found proxy file /tmp/x509up_u106867
+DEBUG 2020-08-27 18:14:50.562 UTC: 	 Getting proxy life time left
+DEBUG 2020-08-27 18:14:51.167 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u106867 -timeleft
+ output : 690830
+
+ error: 
+ retcode : 0
+DEBUG 2020-08-27 18:14:51.773 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u106867 -actimeleft
+ output : 690830
+
+ error: 
+ retcode : 0
+DEBUG 2020-08-27 18:14:51.773 UTC: 	 Proxy valid for 191:53:50 hours
+INFO 2020-08-27 18:14:51.773 UTC: 	 Will use CRAB configuration file continuum_crab.py
+DEBUG 2020-08-27 18:14:51.774 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-08-27 18:14:51.775 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2020-08-27 18:14:51.775 UTC: 	 Working area '/afs/cern.ch/work/m/mumuhamm/private/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_Continum/crab_TrkTrig_Efficiency' already exists 
+Please change the requestName in the config file
+ERROR 2020-08-27 18:14:51.775 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 324, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/ClientUtilities.py", line 418, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/m/mumuhamm/private/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_Continum/crab_TrkTrig_Efficiency' already exists 
+Please change the requestName in the config file
+DEBUG 2020-09-22 17:47:32.079 UTC: 	 Running on: Linux lxplus726.cern.ch 3.10.0-1127.13.1.el7.x86_64 #1 SMP Tue Jun 23 15:46:38 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-09-22 17:47:32.137 UTC: 	 OpenSSl version: OpenSSL 1.0.1r  28 Jan 2016
+DEBUG 2020-09-22 17:47:32.137 UTC: 	 Executing command: 'submit'
+DEBUG 2020-09-22 17:47:32.138 UTC: 	 Found CRAB cache file /afs/cern.ch/user/m/mumuhamm/.crab3
+DEBUG 2020-09-22 17:47:32.149 UTC: 	 Checking credentials
+DEBUG 2020-09-22 17:47:32.150 UTC: 	 Found proxy file /tmp/x509up_u106867
+DEBUG 2020-09-22 17:47:32.150 UTC: 	 Getting proxy life time left
+DEBUG 2020-09-22 17:47:32.754 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u106867 -timeleft
+ output : 604704
+
+ error: 
+ retcode : 0
+DEBUG 2020-09-22 17:47:33.359 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u106867 -actimeleft
+ output : 604703
+
+ error: 
+ retcode : 0
+DEBUG 2020-09-22 17:47:33.360 UTC: 	 Proxy lifetime 604704 secs is different from voms extension lifetime 604703 secs for proxy: /tmp/x509up_u106867
+DEBUG 2020-09-22 17:47:33.360 UTC: 	 Proxy valid for 167:58:23 hours
+INFO 2020-09-22 17:47:33.360 UTC: 	 Will use CRAB configuration file jpsiinclusive_crab.py
+DEBUG 2020-09-22 17:47:33.360 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-09-22 17:47:33.457 UTC: 	 Invalid CRAB configuration: In case of Automatic splitting, the Data.unitsPerJob parameter must be in the [180, 2700] minutes range. You asked for 20 minutes.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-09-22 17:47:33.457 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 320, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 93, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Invalid CRAB configuration: In case of Automatic splitting, the Data.unitsPerJob parameter must be in the [180, 2700] minutes range. You asked for 20 minutes.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2020-11-09 06:14:36.988 UTC: 	 Running on: Linux lxplus766.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-09 06:14:37.009 UTC: 	 OpenSSl version: OpenSSL 1.0.1r  28 Jan 2016
+DEBUG 2020-11-09 06:14:37.009 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-09 06:14:37.012 UTC: 	 Found CRAB cache file /afs/cern.ch/user/m/mumuhamm/.crab3
+DEBUG 2020-11-09 06:14:37.024 UTC: 	 Checking credentials
+DEBUG 2020-11-09 06:14:37.024 UTC: 	 Found proxy file /tmp/x509up_u106867
+DEBUG 2020-11-09 06:14:37.024 UTC: 	 Getting proxy life time left
+DEBUG 2020-11-09 06:14:37.630 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u106867 -timeleft
+ output : 604788
+
+ error: 
+ retcode : 0
+DEBUG 2020-11-09 06:14:38.235 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u106867 -actimeleft
+ output : 604787
+
+ error: 
+ retcode : 0
+DEBUG 2020-11-09 06:14:38.236 UTC: 	 Proxy lifetime 604788 secs is different from voms extension lifetime 604787 secs for proxy: /tmp/x509up_u106867
+DEBUG 2020-11-09 06:14:38.236 UTC: 	 Proxy valid for 167:59:47 hours
+INFO 2020-11-09 06:14:38.237 UTC: 	 Will use CRAB configuration file continuum_crab.py
+DEBUG 2020-11-09 06:14:38.237 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-11-09 06:14:38.241 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2020-11-09 06:14:38.245 UTC: 	 Working area '/afs/cern.ch/work/m/mumuhamm/private/ZDC/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_CH/crab_TrkTrig_Efficiency' already exists 
+Please change the requestName in the config file
+ERROR 2020-11-09 06:14:38.245 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 324, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/ClientUtilities.py", line 418, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/m/mumuhamm/private/ZDC/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_CH/crab_TrkTrig_Efficiency' already exists 
+Please change the requestName in the config file
+DEBUG 2020-11-11 11:26:57.764 UTC: 	 CRAB Client version: v3.200812
+DEBUG 2020-11-11 11:26:57.764 UTC: 	 Running on: Linux lxplus720.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-11 11:26:57.764 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-11 11:26:57.765 UTC: 	 Found CRAB cache file /afs/cern.ch/user/m/mumuhamm/.crab3
+INFO 2020-11-11 11:26:57.791 UTC: 	 Will use CRAB configuration file continuum_crab.py
+DEBUG 2020-11-11 11:26:57.791 UTC: 	 Loading CRAB configuration file.
+DEBUG 2020-11-11 11:26:57.895 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2020-11-11 11:26:57.898 UTC: 	 Working area '/afs/cern.ch/work/m/mumuhamm/private/ZDC/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_CH/crab_HLT_Efficiency' already exists 
+Please change the requestName in the config file
+ERROR 2020-11-11 11:26:57.899 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.200812.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.200812.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.200812.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.200812.00/lib/CRABClient/Commands/SubCommand.py", line 315, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.200812.00/lib/CRABClient/ClientUtilities.py", line 397, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/afs/cern.ch/work/m/mumuhamm/private/ZDC/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/HI_DATA_CH/crab_HLT_Efficiency' already exists 
+Please change the requestName in the config file
+INFO 2020-11-11 11:26:57.914 UTC: 	 Log file is /afs/cern.ch/work/m/mumuhamm/private/ZDC/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/crab.log
+DEBUG 2020-11-16 13:21:49.463 UTC: 	 CRAB Client version: v3.201110
+DEBUG 2020-11-16 13:21:49.464 UTC: 	 Running on: Linux lxplus7111.cern.ch 3.10.0-1127.19.1.el7.x86_64 #1 SMP Tue Aug 25 17:23:54 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-11-16 13:21:49.464 UTC: 	 Executing command: 'submit'
+DEBUG 2020-11-16 13:21:49.464 UTC: 	 Found CRAB cache file /afs/cern.ch/user/m/mumuhamm/.crab3
+INFO 2020-11-16 13:21:49.465 UTC: 	 Will use CRAB configuration file continuum_crab.py
+DEBUG 2020-11-16 13:21:49.465 UTC: 	 Loading CRAB configuration file.
+ERROR 2020-11-16 13:21:49.563 UTC: 	 Invalid CRAB configuration: In case of Automatic splitting, the Data.unitsPerJob parameter must be in the [180, 2700] minutes range. You asked for 20 minutes.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2020-11-16 13:21:49.563 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 165, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/bin/crab", line 150, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/submit.py", line 35, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 312, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.201110.00/lib/CRABClient/Commands/SubCommand.py", line 95, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Invalid CRAB configuration: In case of Automatic splitting, the Data.unitsPerJob parameter must be in the [180, 2700] minutes range. You asked for 20 minutes.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2020-11-16 13:21:49.611 UTC: 	 Log file is /afs/cern.ch/work/m/mumuhamm/private/ZDC/CMSSW_10_3_3_patch1/src/Eff_Directory/effAnalyzer/python/crab.log
