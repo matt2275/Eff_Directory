@@ -11,7 +11,7 @@
      [Notes on implementation]
 */
 //
-// Original Author:  Muhammad Muhammad Alibordi
+// Original Author:   Muhammad Alibordi
 //         Created:  Mon, 20 Apr 2020 10:46:25 GMT
 //
 //
@@ -19,7 +19,6 @@
 
 // system include files
 #include <memory>
-
 // user include files
 #include "FWCore/Framework/interface/Frameworkfwd.h"
 #include "FWCore/Framework/interface/one/EDAnalyzer.h"
@@ -209,7 +208,7 @@ std::map<std::string,TH1F*> hists_1d_;
    
    //Muon vars
 
-   Int_t nMuons_;
+     Int_t nMuons_;
      std::vector<double> mu_pt_;
      std::vector<double> mu_eta_;
      std::vector<double> mu_phi_;
@@ -678,13 +677,13 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
                bool notopentrig = false;
             //trigmatching
             for (unsigned int iteTrigObj = 0 ; iteTrigObj < filterToMatch_.size() ; iteTrigObj++){
-          bool foundTheLeg = false;
-          TString filter = filterToMatch_.at(iteTrigObj);
-          int iPass[[maybe_unused]] = 0;
+                   bool foundTheLeg = false;
+                   TString filter = filterToMatch_.at(iteTrigObj);
+                   int iPass[[maybe_unused]] = 0;
           for (unsigned int i = 0 ; i < legObjects[iteTrigObj].size() ; i++){
-              double delR = deltaR(legObjects[iteTrigObj].at(i).eta(), legObjects[iteTrigObj].at(i).phi(),mu->eta(),mu->phi());
-              //std::cout<<"Delta R : ="<<delR<<"\n";
-              if (delR<0.1) {
+                  double delR = deltaR(legObjects[iteTrigObj].at(i).eta(), legObjects[iteTrigObj].at(i).phi(),mu->eta(),mu->phi());
+                  //std::cout<<"Delta R : ="<<delR<<"\n";
+              if (delR<0.3) {
                foundTheLeg = true;
                iPass = i;
                break;
@@ -812,7 +811,6 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     hiNtracksPtCut.push_back(centrality->NtracksPtCut());
     hiNtracksEtaCut.push_back(centrality->NtracksEtaCut());
     hiNtracksEtaPtCut.push_back(centrality->NtracksEtaPtCut());
-    //std::cout<<"hiNtracksEtaPtCut"<<hiNtracksEtaPtCut<<"\n";
     hiHF.push_back(centrality->EtHFtowerSum());
     hiHFplus.push_back(centrality->EtHFtowerSumPlus());
     hiHFminus.push_back(centrality->EtHFtowerSumMinus());
@@ -824,10 +822,8 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     hiHFhit.push_back(centrality->EtHFhitSum());
     hiHFhitPlus.push_back(centrality->EtHFhitSumPlus());
     hiHFhitMinus.push_back(centrality->EtHFhitSumMinus());
-  //  std::cout<<"********************"<<hiHFhitMinus<<"\n";
     hiZDC.push_back(centrality->zdcSum());
     hiZDCplus.push_back(centrality->zdcSumPlus());
-    std::cout<<"ZDC plus outut: = "<<centrality->zdcSumPlus()<<"\n";
     hiZDCminus.push_back(centrality->zdcSumMinus());
 
     hiEEplus.push_back(centrality->EtEESumPlus());
@@ -869,7 +865,6 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
    edm::Handle<reco::BeamSpot> vertexBeamSpot ;
    iEvent.getByToken(offlineBSTok,vertexBeamSpot);
-//std::cout<<vertexBeamSpot->x0()<<"\n";
          BSx.push_back(vertexBeamSpot->x0()); 
          BSy.push_back(vertexBeamSpot->y0());
          BSz.push_back(vertexBeamSpot->z0());
