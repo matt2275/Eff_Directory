@@ -11,7 +11,7 @@
      [Notes on implementation]
 */
 //
-// Original Author:   Muhammad Alibordi
+// Original Author:  Muhammad Muhammad Alibordi
 //         Created:  Mon, 20 Apr 2020 10:46:25 GMT
 //
 //
@@ -19,6 +19,7 @@
 
 // system include files
 #include <memory>
+
 // user include files
 #include "FWCore/Framework/interface/Frameworkfwd.h"
 #include "FWCore/Framework/interface/one/EDAnalyzer.h"
@@ -197,141 +198,155 @@ std::map<std::string,TH1F*> hists_1d_;
    //-------------Tree and variables -------------------
      TTree * tree_;
 
-   //Pv vars
-   Int_t pvNTracks_; 
-   Int_t good_vertices_; //generated pile up
-   Int_t nPV_; //number of reconsrtucted primary vertices
+     //Pv vars
+     Int_t pvNTracks_; 
+     Int_t good_vertices_; //generated pile up
+     Int_t nPV_; //number of reconsrtucted primary vertices
    
-   //Trigger names and decisions 
-   std::vector<bool> triggerDecision;
-   std::vector<std::string> triggerPath;
+     //Trigger names and decisions 
+     std::vector<bool> triggerDecision;
+     std::vector<std::string> triggerPath;
    
-   //Muon vars
+     //Muon vars
 
      Int_t nMuons_;
-     std::vector<double> mu_pt_;
-     std::vector<double> mu_eta_;
-     std::vector<double> mu_phi_;
-     std::vector<double> mu_energy_;
-     std::vector<int> mu_charge_;
-     std::vector<int> mu_type_;
-     std::vector<double> mu_d0_;
-     std::vector<double> mu_dz_;
-     std::vector<double> mu_SIP_;
-     std::vector<double> mu_Chi2NDF_;
-     std::vector<double> mu_InnerD0_;
-     std::vector<double> mu_InnerDz_;
-     std::vector<int>      mu_TrkLayers_;
-     std::vector<int>      mu_PixelLayers_;
-     std::vector<int>      mu_PixelHits_;
-     std::vector<int>      mu_MuonHits_;
-     std::vector<int>      mu_Stations_;
-     std::vector<int>      mu_Matches_;
-     std::vector<int>      mu_TrkQuality_;
-     std::vector<double>    mu_IsoTrk_;
-     std::vector<double>    mu_PFChIso_;
-     std::vector<double>    mu_PFPhoIso_;
-     std::vector<double>    mu_PFNeuIso_;
-     std::vector<double>    mu_PFPUIso_;
-     std::vector<double>    mu_PFChIso03_;
-     std::vector<double>    mu_PFPhoIso03_;
-     std::vector<double>    mu_PFNeuIso03_;
-     std::vector<double>    mu_PFPUIso03_;
-     std::vector<double>    mu_InnervalidFraction_;
-     std::vector<double>    mu_segmentCompatibility_;
-     std::vector<double>    mu_chi2LocalPosition_;
-     std::vector<double>    mu_trkKink_;
-     std::vector<double>    mu_BestTrkPtError_;
-     std::vector<double>    mu_BestTrkPt_;
-     std::vector<int>      mu_BestTrkType_;
+     std::vector<double> mu_pt_{-99999};
+     std::vector<double> mu_eta_{-99999};
+     std::vector<double> mu_phi_{-99999};
+     std::vector<double> mu_energy_{-99999};
+     std::vector<int> mu_charge_{-99999};
+     std::vector<int> mu_type_{-99999};
+     std::vector<double> mu_d0_{-99999};
+     std::vector<double> mu_dz_{-99999};
+     std::vector<double> mu_SIP_{-99999};
+     std::vector<double> mu_Chi2NDF_{-99999};
+     std::vector<double> mu_InnerD0_{-99999};
+     std::vector<double> mu_InnerDz_{-99999};
+     std::vector<int>      mu_TrkLayers_{-99999};
+     std::vector<int>      mu_PixelLayers_{-99999};
+     std::vector<int>      mu_PixelHits_{-99999};
+     std::vector<int>      mu_MuonHits_{-99999};
+     std::vector<int>      mu_Stations_{-99999};
+     std::vector<int>      mu_Matches_{-99999};
+     std::vector<int>      mu_TrkQuality_{-99999};
+     std::vector<double>    mu_IsoTrk_{-99999};
+     std::vector<double>    mu_PFChIso_{-99999};
+     std::vector<double>    mu_PFPhoIso_{-99999};
+     std::vector<double>    mu_PFNeuIso_{-99999};
+     std::vector<double>    mu_PFPUIso_{-99999};
+     std::vector<double>    mu_PFChIso03_{-99999};
+     std::vector<double>    mu_PFPhoIso03_{-99999};
+     std::vector<double>    mu_PFNeuIso03_{-99999};
+     std::vector<double>    mu_PFPUIso03_{-99999};
+     std::vector<double>    mu_InnervalidFraction_{-99999};
+     std::vector<double>    mu_segmentCompatibility_{-99999};
+     std::vector<double>    mu_chi2LocalPosition_{-99999};
+     std::vector<double>    mu_trkKink_{-99999};
+     std::vector<double>    mu_BestTrkPtError_{-99999};
+     std::vector<double>    mu_BestTrkPt_{-99999};
+     std::vector<int>      mu_BestTrkType_{-99999};
 
-     std::vector<int>      mu_CutBasedIdLoose_;
-     std::vector<int>      mu_CutBasedIdMedium_;
-     std::vector<int>      mu_CutBasedIdTight_;
-     std::vector<int>      mu_CutBasedIdMediumPrompt_;
-     std::vector<int>      mu_CutBasedIdGlobalHighPt_;
-     std::vector<int>      mu_CutBasedIdTrkHighPt_;
-     std::vector<int>      mu_PFIsoVeryLoose_;
-     std::vector<int>      mu_PFIsoLoose_;
-     std::vector<int>      mu_PFIsoMedium_;
-     std::vector<int>      mu_PFIsoTight_;
-     std::vector<int>      mu_PFIsoVeryTight_;
-     std::vector<int>      mu_PFIsoVeryVeryTight_;
-     std::vector<int>      mu_TrkIsoLoose_;
-     std::vector<int>      mu_TrkIsoTight_;
-     std::vector<int>      mu_SoftCutBasedId_;
-     std::vector<int>      mu_MvaLoose_;
-     std::vector<int>      mu_MvaMedium_;
-     std::vector<int>      mu_MvaTight_;
-     std::vector<int>      mu_MiniIsoLoose_;
-     std::vector<int>      mu_MiniIsoMedium_;
-     std::vector<int>      mu_MiniIsoTight_;
-     std::vector<int>      mu_MiniIsoVeryTight_;
-     std::vector<int>      mu_TriggerIdLoose_;
-     std::vector<int>      mu_InTimeMuon_;
-     std::vector<int>      mu_MultiIsoLoose_;
-     std::vector<int>      mu_MultiIsoMedium_;
+     std::vector<int>      mu_CutBasedIdLoose_{-99999};
+     std::vector<int>      mu_CutBasedIdMedium_{-99999};
+     std::vector<int>      mu_CutBasedIdTight_{-99999};
+     std::vector<int>      mu_CutBasedIdMediumPrompt_{-99999};
+     std::vector<int>      mu_CutBasedIdGlobalHighPt_{-99999};
+     std::vector<int>      mu_CutBasedIdTrkHighPt_{-99999};
+     std::vector<int>      mu_PFIsoVeryLoose_{-99999};
+     std::vector<int>      mu_PFIsoLoose_{-99999};
+     std::vector<int>      mu_PFIsoMedium_{-99999};
+     std::vector<int>      mu_PFIsoTight_{-99999};
+     std::vector<int>      mu_PFIsoVeryTight_{-99999};
+     std::vector<int>      mu_PFIsoVeryVeryTight_{-99999};
+     std::vector<int>      mu_TrkIsoLoose_{-99999};
+     std::vector<int>      mu_TrkIsoTight_{-99999};
+     std::vector<int>      mu_SoftCutBasedId_{-99999};
+     std::vector<int>      mu_MvaLoose_{-99999};
+     std::vector<int>      mu_MvaMedium_{-99999};
+     std::vector<int>      mu_MvaTight_{-99999};
+     std::vector<int>      mu_MiniIsoLoose_{-99999};
+     std::vector<int>      mu_MiniIsoMedium_{-99999};
+     std::vector<int>      mu_MiniIsoTight_{-99999};
+     std::vector<int>      mu_MiniIsoVeryTight_{-99999};
+     std::vector<int>      mu_TriggerIdLoose_{-99999};
+     std::vector<int>      mu_InTimeMuon_{-99999};
+     std::vector<int>      mu_MultiIsoLoose_{-99999};
+     std::vector<int>      mu_MultiIsoMedium_{-99999};
 
      std::vector<bool> passFilter_trigOpen;
      std::vector<bool> passFilter_trigNotOpen;
      
      //Gen particles
-     std::vector<double> genMuon_pt;
-     std::vector<double> genMuon_eta;
-     std::vector<double> genMuon_phi;
-     std::vector<double> genMuon_energy;
+     std::vector<double> genMuon_pt{-99999};
+     std::vector<double> genMuon_eta{-99999};
+     std::vector<double> genMuon_phi{-99999};
+     std::vector<double> genMuon_energy{-99999};
+
+// did not initilize
      std::vector<bool>   genMuon_fromZ;
 
   const MagneticField* magneticField_; 
   
 
-  std::vector<double> BSx;
-  std::vector<double> BSy;
-  std::vector<double> BSz;
-  std::vector<double> BSdx;
-  std::vector<double> BSdy;
-  std::vector<double> BSdz;
-  std::vector<double> BSdxdz;
-  std::vector<double> BSdydz;
-  std::vector<double> BSsigmaZ;
-  std::vector<double> BSdsigmaZ;
-//  std::vector<double> MuonsDCA;   
- // std::vector<double> vtxProb_dimuon;
- // std::vector<double> CosAlpha; 
+  std::vector<double> BSx{-99999};
+  std::vector<double> BSy{-99999};
+  std::vector<double> BSz{-99999};
+  std::vector<double> BSdx{-99999};
+  std::vector<double> BSdy{-99999};
+  std::vector<double> BSdz{-99999};
+  std::vector<double> BSdxdz{-99999};
+  std::vector<double> BSdydz{-99999};
+  std::vector<double> BSsigmaZ{-99999};
+  std::vector<double> BSdsigmaZ{-99999};
+  //std::vector<double> MuonsDCA;   
+  //std::vector<double> vtxProb_dimuon;
+  //std::vector<double> CosAlpha; 
 
   //centrality information 
     int hiBin;
-    std::vector<int> hiNpix;
-    std::vector<int> hiNpixelTracks;
-    std::vector<int> hiNtracks;
-    std::vector<int> hiNtracksPtCut;
-   std::vector<int> hiNtracksEtaCut;
-   std::vector<int> hiNtracksEtaPtCut;
-    std::vector<int> hiNpixPlus;
-   std::vector<int> hiNpixMinus;
-   std::vector<int> hiNpixelTracksPlus;
-   std::vector<int> hiNpixelTracksMinus;
-    std::vector<double> hiHF;
-    std::vector<double>  hiHFplus;
-    std::vector<double>  hiHFminus;
-    std::vector<double>  hiHFplusEta4;
-    std::vector<double>  hiHFminusEta4;
-    std::vector<double>  hiHFhit;
-    std::vector<double>  hiHFhitPlus;
-    std::vector<double>  hiHFhitMinus;
-    std::vector<double>  hiHFECut;
-    std::vector<double>  hiHFECutPlus;
-    std::vector<double>  hiHFECutMinus;
-    std::vector<double>  hiEB;
-    std::vector<double>  hiET;
-    std::vector<double>  hiEE;
-    std::vector<double>  hiEEplus;
-    std::vector<double>  hiEEminus;
-    std::vector<double>  hiZDC;
-    std::vector<double>  hiZDCplus;
-    std::vector<double>  hiZDCminus;
+    std::vector<int> hiNpix{-99999};
+    std::vector<int> hiNpixelTracks{-99999};
+    std::vector<int> hiNtracks{-99999};
+    std::vector<int> hiNtracksPtCut{-99999};
+    std::vector<int> hiNtracksEtaCut{-99999};
+    std::vector<int> hiNtracksEtaPtCut{-99999};
+    std::vector<int> hiNpixPlus{-99999};
+    std::vector<int> hiNpixMinus{-99999};
+    std::vector<int> hiNpixelTracksPlus{-99999};
+    std::vector<int> hiNpixelTracksMinus{-99999};
+    std::vector<double> hiHF{-99999};
+    std::vector<double>  hiHFplus{-99999};
+    std::vector<double>  hiHFminus{-99999};
+    std::vector<double>  hiHFplusEta4{-99999};
+    std::vector<double>  hiHFminusEta4{-99999};
+    std::vector<double>  hiHFhit{-99999};
+    std::vector<double>  hiHFhitPlus{-99999};
+    std::vector<double>  hiHFhitMinus{-99999};
+    std::vector<double>  hiHFECut{-99999};
+    std::vector<double>  hiHFECutPlus{-99999};
+    std::vector<double>  hiHFECutMinus{-99999};
+    std::vector<double>  hiEB{-99999};
+    std::vector<double>  hiET{-99999};
+    std::vector<double>  hiEE{-99999};
+    std::vector<double>  hiEEplus{-99999};
+    std::vector<double>  hiEEminus{-99999};
+    std::vector<double>  hiZDC{-99999};
+    std::vector<double>  hiZDCplus{-99999};
+    std::vector<double>  hiZDCminus{-99999};
     uint32_t     run_;
     double   genWeight_;
+
+
+    // Matthew Code
+    std::vector<int> nDeltaRPass{-99999}; 
+    std::vector<double>  Check_DeltaR{-99999};
+    std::vector<double>  Check_DeltaPt{-99999};
+    std::vector<double>  Check_DeltaEta{-99999};
+    std::vector<double>  Check_DeltaPhi{-99999};
+    std::vector<int> niteTrigObj{-99999};
+    std::vector<int> nlegObjects{-99999};
+
+
 };
 
 
@@ -493,6 +508,14 @@ tree_->Branch("BSdsigmaZ",&BSdsigmaZ);
 //tree_->Branch("vtxProb_dimuon",&vtxProb_dimuon);
 //tree_->Branch("CosAlpha",&CosAlpha);
 
+// Matthew Code
+tree_->Branch("nDeltaRPass",&nDeltaRPass);
+tree_->Branch("Check_DeltaR",&Check_DeltaR);
+tree_->Branch("Check_DeltaPt",&Check_DeltaPt);
+tree_->Branch("Check_DeltaEta",&Check_DeltaEta);
+tree_->Branch("Check_DeltaPhi",&Check_DeltaPhi);
+tree_->Branch("niteTrigObj",&niteTrigObj);
+tree_->Branch("nlegObjects",&nlegObjects);
 
   
 }
@@ -523,16 +546,16 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     edm::Handle<View<reco::Vertex>> pv;
     iEvent.getByToken(primaryvertexTok, pv);
      
-   if (pv->empty()) return; // skip the event if no PV found     
-   const reco::Vertex &pv_track = pv->front();
-   nPV_    = pv->size();
-   good_vertices_ = 0;
-   if (pv.isValid())
-    if (pv->size() > 0)
-      for (auto v : *pv)
-        if (v.ndof() >= 4 && !v.isFake())
-          ++good_vertices_;
-  pvNTracks_ = pv_track.nTracks();
+               if (pv->empty()) return; // skip the event if no PV found     
+               const reco::Vertex &pv_track = pv->front();
+               nPV_    = pv->size();
+               good_vertices_ = 0;
+               if (pv.isValid())
+               if (pv->size() > 0)
+               for (auto v : *pv)
+               if (v.ndof() >= 4 && !v.isFake())
+                       ++good_vertices_;
+               pvNTracks_ = pv_track.nTracks();
   
 
    if(isMCstudy_)
@@ -602,8 +625,8 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
          edm::Handle< View<reco::Muon>> muons;
          iEvent.getByToken(muonTok, muons);
-      mu_pt_.clear();
-
+             nMuons_ = 0;
+     mu_pt_.clear();
      mu_eta_.clear();
      mu_phi_.clear();
      mu_energy_.clear();
@@ -668,25 +691,58 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
      passFilter_trigOpen.clear();
      passFilter_trigNotOpen.clear();
-    
+
+     //Matthew Code
+     Check_DeltaR.clear();
+     Check_DeltaPt.clear();
+     Check_DeltaEta.clear();
+     Check_DeltaPhi.clear();
+     nlegObjects.clear();
+     niteTrigObj.clear();
+     nDeltaRPass.clear();    
     for(unsigned i=0; i < muons->size();++i ) {
        const auto mu = muons->ptrAt(i);
                   bool opentrig = false;
                bool notopentrig = false;
             //trigmatching
+            niteTrigObj.push_back(filterToMatch_.size());
             for (unsigned int iteTrigObj = 0 ; iteTrigObj < filterToMatch_.size() ; iteTrigObj++){
-                   bool foundTheLeg = false;
-                   TString filter = filterToMatch_.at(iteTrigObj);
-                   int iPass[[maybe_unused]] = 0;
+          bool foundTheLeg = false;
+          TString filter = filterToMatch_.at(iteTrigObj);
+          int iPass[[maybe_unused]] = 0;
+	  int tmp_nDeltaRPass = 0;
+          double tmp_DeltaPt = 0;
+          double tmp_DeltaEta = 0;
+          double tmp_DeltaPhi = 0;
+          nlegObjects.push_back(legObjects[iteTrigObj].size());
           for (unsigned int i = 0 ; i < legObjects[iteTrigObj].size() ; i++){
-                  double delR = deltaR(legObjects[iteTrigObj].at(i).eta(), legObjects[iteTrigObj].at(i).phi(),mu->eta(),mu->phi());
-                  //std::cout<<"Delta R : ="<<delR<<"\n";
-              if (delR<0.3) {
+              double delR = deltaR(legObjects[iteTrigObj].at(i).eta(), legObjects[iteTrigObj].at(i).phi(),mu->eta(),mu->phi());
+              tmp_DeltaPt = fabs(legObjects[iteTrigObj].at(i).pt() - mu->pt());
+              tmp_DeltaEta = fabs(legObjects[iteTrigObj].at(i).eta() - mu->eta());
+              tmp_DeltaPhi = fabs(legObjects[iteTrigObj].at(i).phi() - mu->phi());
+              //std::cout<<"Delta R : ="<<delR<<"\n";
+              if (delR<0.6 && !foundTheLeg) {
                foundTheLeg = true;
                iPass = i;
-               break;
+               tmp_nDeltaRPass += 1;
+               Check_DeltaR.push_back(delR);
+               Check_DeltaPt.push_back(tmp_DeltaPt);
+               Check_DeltaEta.push_back(tmp_DeltaEta);
+               Check_DeltaPhi.push_back(tmp_DeltaPhi);
+
               }
+              else if (delR<0.6 && foundTheLeg) {
+               tmp_nDeltaRPass += 1;
+               Check_DeltaR.push_back(delR);
+               Check_DeltaPt.push_back(tmp_DeltaPt);
+               Check_DeltaEta.push_back(tmp_DeltaEta);
+               Check_DeltaPhi.push_back(tmp_DeltaPhi);
+
+              }
+
           }
+
+          nDeltaRPass.push_back(tmp_nDeltaRPass);
 
           if(mu_filters[0].Contains(filter) && foundTheLeg) { opentrig = true;}
           if(mu_filters[1].Contains(filter) && foundTheLeg)  {notopentrig = true; }
@@ -809,6 +865,7 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     hiNtracksPtCut.push_back(centrality->NtracksPtCut());
     hiNtracksEtaCut.push_back(centrality->NtracksEtaCut());
     hiNtracksEtaPtCut.push_back(centrality->NtracksEtaPtCut());
+    //std::cout<<"hiNtracksEtaPtCut"<<hiNtracksEtaPtCut<<"\n";
     hiHF.push_back(centrality->EtHFtowerSum());
     hiHFplus.push_back(centrality->EtHFtowerSumPlus());
     hiHFminus.push_back(centrality->EtHFtowerSumMinus());
@@ -820,6 +877,7 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
     hiHFhit.push_back(centrality->EtHFhitSum());
     hiHFhitPlus.push_back(centrality->EtHFhitSumPlus());
     hiHFhitMinus.push_back(centrality->EtHFhitSumMinus());
+  //  std::cout<<"********************"<<hiHFhitMinus<<"\n";
     hiZDC.push_back(centrality->zdcSum());
     hiZDCplus.push_back(centrality->zdcSumPlus());
     hiZDCminus.push_back(centrality->zdcSumMinus());
@@ -863,6 +921,7 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
    edm::Handle<reco::BeamSpot> vertexBeamSpot ;
    iEvent.getByToken(offlineBSTok,vertexBeamSpot);
+//std::cout<<vertexBeamSpot->x0()<<"\n";
          BSx.push_back(vertexBeamSpot->x0()); 
          BSy.push_back(vertexBeamSpot->y0());
          BSz.push_back(vertexBeamSpot->z0());
