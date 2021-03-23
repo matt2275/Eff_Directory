@@ -13,9 +13,10 @@ config.section_('Data')
 config.Data.inputDataset = '/HIForward/HIRun2018A-04Apr2019-v1/AOD'
 #config.Data.inputDataset = '/JPsi_pThat-2_TuneCP5_HydjetDrumMB_5p02TeV_Pythia8/HINPbPbAutumn18DR-mva98_103X_upgrade2018_realistic_HI_v11-v1/AODSIM'
 config.Data.ignoreLocality = False
-config.Data.unitsPerJob     = 200#5000
-config.Data.totalUnits      = 700000
-config.Data.splitting       ='EventAwareLumiBased'#'LumiBased'#'FileBased'#EventAwareLumiBased'
+config.Data.unitsPerJob     = 40#5000
+#config.Data.totalUnits      = 700000
+config.Data.splitting       ='FileBased'#'EventAwareLumiBased'#'LumiBased'#'FileBased'#EventAwareLumiBased'
+config.Data.runRange        = '326574-326580'
 config.JobType.maxMemoryMB = 2500
 config.Data.lumiMask = 'Cert_326381-327564_HI_PromptReco_Collisions18_JSON_HF_and_MuonPhys.txt'
 config.Data.outLFNDirBase = '/store/user/mumuhamm/ForwardData'
