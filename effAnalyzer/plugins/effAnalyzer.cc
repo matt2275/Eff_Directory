@@ -602,8 +602,6 @@ effAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
          edm::Handle< View<reco::Muon>> muons;
          iEvent.getByToken(muonTok, muons);
-             nMuons_ = 0;
-      mu_pt_ = {-9999};
       mu_pt_.clear();
 
      mu_eta_.clear();
