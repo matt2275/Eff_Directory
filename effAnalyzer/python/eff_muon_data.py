@@ -25,7 +25,7 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condD
 #process.GlobalTag.globaltag = "103X_dataRun2_v6"
 process.GlobalTag.globaltag = "103X_upgrade2018_realistic_HI_v13"
 process.maxEvents = mumu.untracked.PSet(
-    input = mumu.untracked.int32(1000)
+    input = mumu.untracked.int32(-1)
 )
 #Filters for open trigger
 #L1: L1_SingleMuOpen_NotMinimumBiasHF2_AND_BptxAND
@@ -37,7 +37,6 @@ process.maxEvents = mumu.untracked.PSet(
 
 
 file_HIAOD = mumu.untracked.vstring(
-'root://cms-xrd-global.cern.ch//store/hidata/HIRun2018A/HIMinimumBias1/AOD/04Apr2019-v1/610004/342D5771-4270-8247-960E-A125DDF41C8B.root',
 'root://xrootd.unl.edu//store/user/shuaiy/RiceHIN/STARlight/STARlight_GammaGamma2MuMu_Reco_woPtCut_PbPb5TeV_v1/GammaGamma2MuMu_GENSIM_woPtCut_PbPb5TeV_v1/STARlight_GammaGamma2MuMu_Reco_woPtCut_PbPb5TeV_v1/191111_221615/0000/step3_RECO_99.root',
 'root://xrootd.unl.edu//store/user/shuaiy/RiceHIN/STARlight/STARlight_GammaGamma2MuMu_Reco_woPtCut_PbPb5TeV_v1/GammaGamma2MuMu_GENSIM_woPtCut_PbPb5TeV_v1/STARlight_GammaGamma2MuMu_Reco_woPtCut_PbPb5TeV_v1/191111_221615/0000/step3_RECO_98.root',
 'root://xrootd.unl.edu//store/user/shuaiy/RiceHIN/STARlight/STARlight_GammaGamma2MuMu_Reco_woPtCut_PbPb5TeV_v1/GammaGamma2MuMu_GENSIM_woPtCut_PbPb5TeV_v1/STARlight_GammaGamma2MuMu_Reco_woPtCut_PbPb5TeV_v1/191111_221615/0000/step3_RECO_97.root',
@@ -81,7 +80,7 @@ file_HIAOD = mumu.untracked.vstring(
 
 
 inputFiles = file_HIAOD
-outputFile = "continuum_sample.root"
+outputFile = "/eos/user/m/mnickel/TauTau/continuum_sample_check_deltaR.root"
 print("AOD input files are used")
 process.source = mumu.Source ("PoolSource", fileNames = inputFiles )
 
@@ -118,7 +117,7 @@ process.eff = mumu.EDAnalyzer('effAnalyzer',
 #L1 filter: hltL1sSingleMu0NotMBHF2AND
 #HLT filter: hltPreHIUPCSingleMu0NotMBHF2AND
 
-print('\n\033[31m~*~ USING CENTRALITY TABLE FOR PbPb 2018 DATA ~*~\033[0m\n')
+
 process.GlobalTag.snapshotTime = mumu.string("9999-12-31 23:59:59.000")
 process.GlobalTag.toGet.extend([
     mumu.PSet(record = mumu.string("HeavyIonRcd"),
