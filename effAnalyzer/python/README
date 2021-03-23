@@ -1,0 +1,8 @@
+# The normal jpsi.py is the one which runs of the inclusive jpsi sample
+# Th trigger efficiency is tested for the incoherent, inclusive Jpsi plus the GGtoMuMu MC sample 
+The Jpsi samples are failed to reproduce the proper efficiencies since a forward selection is implemented from the very beginning of the sample production 
+After realizing that we finally moved to the GGtoMuMu sample 
+AOD 
+Noresonant
+Event counting 
+
